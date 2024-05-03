@@ -19,6 +19,6 @@ jobs:
       - run: docker build -t pichi11037/multi-worker ./worker
 
       - run: docker push pichi11037/multi-client
-      - run: docker push pichi11037multi-nginx
+      - run: docker push pichi11037/multi-nginx
       - run: docker push pichi11037/multi-server
       - run: docker push pichi11037/multi-worker
