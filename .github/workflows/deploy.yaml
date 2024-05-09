@@ -1,4 +1,4 @@
-name: Deploy Fibonacci Server
+name: Deploy MultiDocker
 on:
   push:
     branches:
