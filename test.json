@@ -1,0 +1,37 @@
+{ 
+  "AWSEBDockerrunVersion" : 2,
+  "containerDefinitions" : [ 
+      { 
+        "essential" : false,
+        "hostname" : "client",
+        "image" : "pichi11037/multi-client",
+        "name" : "client"
+      },
+      { 
+        "essential" : false,
+        "hostname" : "api",
+        "image" : "pichi11037/multi-server",
+        "name" : "server"
+      },
+      { 
+        "essential" : false,
+        "hostname" : "worker",
+        "image" : "pichi11037/multi-worker",
+        "name" : "worker"
+      },
+      { 
+        "essential" : true,
+        "hostname" : "nginx",
+        "image" : "pichi11037/multi-nginx",
+        "links" : [ 
+            "client",
+            "server"
+          ],
+        "name" : "nginx",
+        "portMappings" : [ { 
+              "containerPort" : 80,
+              "hostport" : 80
+            } ]
+      }
+    ]
+}
